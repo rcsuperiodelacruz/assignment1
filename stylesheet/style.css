@@ -5,12 +5,32 @@ body{
 button{
     width: 100px;
     height: 50px;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    border:none;
+}
+
+#newNote{
+    background-color: #375F68;
+}
+
+#darkThemeButton{
+    background-color: #56536A;
+}
+#saveButton{
+    background-color: #375F68;
+}
+
+#cancelButton{
+    background-color:#9B332C ;
 }
 .container{
     display:grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(6,1fr);
     height: 97vh;
+    width: 97vw;
     grid-gap:5px;
 }
 main{
@@ -18,7 +38,7 @@ main{
     grid-row: 1/7;
     display:grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(7,1fr);
+    grid-template-rows: repeat(6,1fr);
     grid-gap:5px;
 }
 main h1{
@@ -71,6 +91,10 @@ aside{
     padding: 10px;
 
 }
+aside h1{
+    display:flex;
+    justify-content: center;
+}
 
 footer{
     grid-column: 2/-1;
@@ -84,4 +108,24 @@ footer{
     display:flex;
     justify-content: center;
 }
+
+h1, li, a, h2{
+    color: #256993;
+    font-family: 'Montserrat', sans-serif;
+}
+@media (max-width: 600px) {
+    main{
+        grid-column: 1/-1;
+        grid-row: 1/6;
+    }
+    aside{
+        grid-column:1/6 ;
+        grid-row: 6/7;
+    }
+    footer{
+        grid-column: 1/-1;
+        grid-row: 7/-1;
+    }
+}
+  
 
