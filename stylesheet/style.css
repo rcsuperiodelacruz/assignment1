@@ -140,3 +140,7 @@ h1, li, a, h2{
 .colorText{
     color: #F0EB8D
 }
+
+.hide{
+    display:none;
+}
