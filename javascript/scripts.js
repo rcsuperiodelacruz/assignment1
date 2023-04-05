@@ -4,11 +4,16 @@ const cancelButton = document.querySelector('#cancelButton');
 const notes = document.querySelector('textArea')
 const saveButton = document.querySelector('#saveButton')
 const newNoteButton = document.querySelector('#newNote')
+const listItem = document.createElement('li');
+const ulElement = document.querySelector('ul');
+const notesContainer = document.querySelector('#notes')
+
 // event listeners
 darkButton.addEventListener('click', darkTheme)
 cancelButton.addEventListener('click', hide)
 newNoteButton.addEventListener('click', unHide)
-
+saveButton.addEventListener('click', saveNotes)
+notesContainer.addEventListener('click',changeTextBox)
 // making array
 
 let allNotes = [{title:'note one', body:'this is note one'},{title:'note two', body:'this is note two'}]
@@ -21,6 +26,12 @@ function darkTheme(){
     const allText = document.querySelectorAll('*')
     element.classList.toggle('darkBackground')
     aside.classList.toggle('darkAside')
+    if(notes.classList.contains('darkTextBox')){
+        notes.classList.add('darkTextBox')
+    }else{
+        notes.classList.remove('darkTextBox')
+
+    }
     console.log('hi')
     if(darkButton.textContent.includes('Dark')){
         darkButton.textContent = 'Light Theme'
@@ -55,5 +66,21 @@ function unHide(){
 
 
 function saveNotes(){
+    const noteName = prompt('what is the title your notes')
+    const noteObject = {title:noteName, body:notes.value}
+    console.log(noteObject)
+    allNotes.push(noteObject)
+    console.log(allNotes)
+    listItem.innerText = noteName
+    console.log(listItem.innerText)
+    ulElement.appendChild(listItem)
+}
 
+function changeTextBox(event){
+    console.log(event.target)
+    for(let i = 0;i<allNotes.length;i++){
+        if(allNotes[i].title === event.target.textContent){
+            notes.value = allNotes[i].body;
+        }
+    }
 }
