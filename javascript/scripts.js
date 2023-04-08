@@ -26,12 +26,7 @@ function darkTheme(){
     const allText = document.querySelectorAll('*')
     element.classList.toggle('darkBackground')
     aside.classList.toggle('darkAside')
-    if(notes.classList.contains('darkTextBox')){
-        notes.classList.add('darkTextBox')
-    }else{
-        notes.classList.remove('darkTextBox')
-
-    }
+    notes.classList.toggle('darkTextBox')
     console.log('hi')
     if(darkButton.textContent.includes('Dark')){
         darkButton.textContent = 'Light Theme'
@@ -71,9 +66,17 @@ function saveNotes(){
     console.log(noteObject)
     allNotes.push(noteObject)
     console.log(allNotes)
-    listItem.innerText = noteName
-    console.log(listItem.innerText)
-    ulElement.appendChild(listItem)
+    let li = document.createElement("li")
+
+    // listItem.innerText = noteName
+    // console.log(listItem.innerText)
+    // ulElement.appendChild(listItem)
+    // listItem.classList.add('.colorText')
+    for(let i = 0; i<allNotes.length;i++){
+        li.innerText = allNotes[i].title
+        console.log(li)
+        ulElement.appendChild(li)
+    }
 }
 
 function changeTextBox(event){
