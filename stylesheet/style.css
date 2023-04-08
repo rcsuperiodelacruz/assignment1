@@ -29,9 +29,9 @@ button{
     display:grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(6,1fr);
+    grid-gap:5px;
     height: 97vh;
     width: 97vw;
-    grid-gap:5px;
 }
 main{
     grid-column: 2/-1;
@@ -86,7 +86,7 @@ textarea{
 }
 aside{
     background-color: #FAF4EC;
-    grid-column: 1/2;
+    grid-column: 1fr;
     grid-row: 1/8;
     padding: 10px;
 
@@ -129,3 +129,22 @@ h1, li, a, h2{
 }
   
 
+.darkBackground{
+    background-color: #2D2727;
+}
+
+.darkAside{
+    background-color: #413543;
+}
+
+.colorText{
+    color: #F0EB8D
+}
+
+.hide{
+    display:none;
+}
+
+.darkTextBox{
+    background-color: #413543;
+}
